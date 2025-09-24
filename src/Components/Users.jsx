@@ -36,6 +36,14 @@ const Users = ({ userPromise }) => {
 
     const handleDeleteUser = (id) =>{
         console.log("delete this user",id);
+        fetch(`http://localhost:3000/users/${id}`,{
+            method:'DELETE'
+        })
+        .then(res =>res.json() )
+        .then(data => {
+            console.log("after delte",data)
+        }
+        )
         
     }
 
